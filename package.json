@@ -1,0 +1,43 @@
+{
+  "name": "apollo-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaimanza/Apollo-Graphql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaimanza/Apollo-Graphql/issues"
+  },
+  "homepage": "https://github.com/zaimanza/Apollo-Graphql#readme",
+  "dependencies": {
+    "apollo-server-core": "^3.3.0",
+    "apollo-server-express": "^3.3.0",
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.3.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "easygraphql-format-error": "0.0.3",
+    "express": "^4.17.1",
+    "graphql": "^15.6.1",
+    "graphql-subscriptions": "^1.2.1",
+    "graphql-tools": "^8.2.0",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "subscriptions-transport-ws": "^0.9.19"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
