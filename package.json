@@ -32,14 +32,11 @@
     "express": "^4.17.1",
     "graphql": "^15.6.1",
     "graphql-kafkajs-subscriptions": "^2.1.7",
-    "graphql-redis-subscriptions": "^2.4.0",
     "graphql-subscriptions": "^1.2.1",
     "graphql-tools": "^8.2.0",
     "http": "0.0.1-security",
-    "ioredis": "^4.28.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "simple-mock": "^0.8.0",
     "subscriptions-transport-ws": "^0.9.19"
   },
   "devDependencies": {

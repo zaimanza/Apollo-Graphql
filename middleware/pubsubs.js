@@ -14,20 +14,20 @@ var {
 // var {
 //     MQTTPubSub,
 // } = require('graphql-mqtt-subscriptions');
-var {
-    RedisPubSub,
-} = require('graphql-redis-subscriptions');
+// var {
+//     RedisPubSub,
+// } = require('graphql-redis-subscriptions');
 // var {
 //     GooglePubSub,
 // } = require('@axelspringer/graphql-google-pubsub');
-var {
-    Cluster
-} = require('ioredis');//
-var {
-    spy,
-    restore,
-    stub,
-} = require('simple-mock');
+// var {
+//     Cluster
+// } = require('ioredis');//
+// var {
+//     spy,
+//     restore,
+//     stub,
+// } = require('simple-mock');
 
 // const pubsub = new MQTTPubSub({
 //     onMQTTSubscribe: (subId, granted) => {
@@ -35,7 +35,7 @@ var {
 //     },
 // });
 
-// const pubsub = new PubSub(); //create a PubSub instance
+const pubsub = new PubSub(); //create a PubSub instance
 
 /////////////////////////////////////////////////////////////////////
 // const kafka = new Kafka({
@@ -83,49 +83,49 @@ var {
 //     globalConfig: {} // options passed directly to the consumer and producer
 // });
 
-const options = {
-    host: 'redis-17863.c13.us-east-1-3.ec2.cloud.redislabs.com',
-    port: '17863',
-    retryStrategy: times => {
-        // reconnect after
-        return Math.min(times * 50, 2000);
-    }
-};
+// const options = {
+//     host: 'redis-17863.c13.us-east-1-3.ec2.cloud.redislabs.com',
+//     port: '17863',
+//     retryStrategy: times => {
+//         // reconnect after
+//         return Math.min(times * 50, 2000);
+//     }
+// };
 
-const publishSpy = spy((channel, message) => listener && listener(channel, message));
-const subscribeSpy = spy((channel, cb) => cb && cb(null, channel));
-const unsubscribeSpy = spy((channel, cb) => cb && cb(channel));
-const psubscribeSpy = spy((channel, cb) => cb && cb(null, channel));
-const punsubscribeSpy = spy((channel, cb) => cb && cb(channel));
-const quitSpy = spy(cb => cb);
+// const publishSpy = spy((channel, message) => listener && listener(channel, message));
+// const subscribeSpy = spy((channel, cb) => cb && cb(null, channel));
+// const unsubscribeSpy = spy((channel, cb) => cb && cb(channel));
+// const psubscribeSpy = spy((channel, cb) => cb && cb(null, channel));
+// const punsubscribeSpy = spy((channel, cb) => cb && cb(channel));
+// const quitSpy = spy(cb => cb);
 
-const mockRedisClient = {
-    publish: publishSpy,
-    subscribe: subscribeSpy,
-    unsubscribe: unsubscribeSpy,
-    psubscribe: psubscribeSpy,
-    punsubscribe: punsubscribeSpy,
-    on: (event, cb) => {
-        if (event === 'message') {
-            listener = cb;
-        }
-    },
-    quit: quitSpy,
-};
+// const mockRedisClient = {
+//     publish: publishSpy,
+//     subscribe: subscribeSpy,
+//     unsubscribe: unsubscribeSpy,
+//     psubscribe: psubscribeSpy,
+//     punsubscribe: punsubscribeSpy,
+//     on: (event, cb) => {
+//         if (event === 'message') {
+//             listener = cb;
+//         }
+//     },
+//     quit: quitSpy,
+// };
 
-const mockOptions = {
-    publisher: (mockRedisClient),
-    subscriber: (mockRedisClient),
-};
+// const mockOptions = {
+//     publisher: (mockRedisClient),
+//     subscriber: (mockRedisClient),
+// };
 
-const cluster = new Cluster([{
-    host: 'ipOrHost',
-    port: 1234
-},]); // like: 
-const pubsub = new RedisPubSub({
-    publisher: cluster,
-    subscriber: cluster
-});
+// const cluster = new Cluster([{
+//     host: 'ipOrHost',
+//     port: 1234
+// },]); // like: 
+// const pubsub = new RedisPubSub({
+//     publisher: cluster,
+//     subscriber: cluster
+// });
 
 exports.pubsub = pubsub;
 exports.withFilter = withFilter;
