@@ -32,6 +32,7 @@ exports.subscriptionResolver = {
                     // Only push an update if the comment is on
                     // the correct repository for this operation
                     return payload.subExample.name == variables.name;
+                    // return true;
                 },
             ),
         },
