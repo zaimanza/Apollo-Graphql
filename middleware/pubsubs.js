@@ -20,7 +20,9 @@ var {
 var {
     GooglePubSub,
 } = require('@axelspringer/graphql-google-pubsub');
-var Redis = require('ioredis');
+var {
+    Cluster
+} = require('ioredis');
 var {
     spy,
     restore,
@@ -116,9 +118,13 @@ const mockOptions = {
     subscriber: (mockRedisClient),
 };
 
+const cluster = new Cluster([{
+    host: 'ipOrHost',
+    port: 1234
+},]); // like: 
 const pubsub = new RedisPubSub({
-    publisher: new Redis(options),
-    subscriber: new Redis(options)
+    publisher: cluster,
+    subscriber: cluster
 });
 
 exports.pubsub = pubsub;
