@@ -82,8 +82,8 @@ var {
 // });
 
 const options = {
-    // host: 'localhost',
-    // port: '9092',
+    host: 'redis-17863.c13.us-east-1-3.ec2.cloud.redislabs.com',
+    port: '17863',
     retryStrategy: times => {
         // reconnect after
         return Math.min(times * 50, 2000);
