@@ -22,7 +22,7 @@ var {
 // } = require('@axelspringer/graphql-google-pubsub');
 var {
     Cluster
-} = require('ioredis');
+} = require('ioredis');//
 var {
     spy,
     restore,
