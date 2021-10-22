@@ -11,35 +11,33 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaimanza/Apollo-Graphql.git"
+    "url": "git+https://github.com/zaimanza/Apollo-Graphql-Template.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zaimanza/Apollo-Graphql/issues"
+    "url": "https://github.com/zaimanza/Apollo-Graphql-Template/issues"
   },
-  "homepage": "https://github.com/zaimanza/Apollo-Graphql#readme",
+  "homepage": "https://github.com/zaimanza/Apollo-Graphql-Template#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
   "dependencies": {
-    "@shirayukikitsune/graphql-kafkajs-subscriptions": "^1.0.0",
-    "apollo-server-core": "^3.3.0",
-    "apollo-server-express": "^3.3.0",
+    "apollo-server-core": "^3.4.0",
+    "apollo-server-express": "^3.4.0",
     "body-parser": "^1.19.0",
     "concurrently": "^6.3.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "easygraphql-format-error": "0.0.3",
+    "easygraphql-format-error": "^0.0.3",
     "express": "^4.17.1",
     "graphql": "^15.6.1",
-    "graphql-kafkajs-subscriptions": "^2.1.7",
     "graphql-subscriptions": "^1.2.1",
     "graphql-tools": "^8.2.0",
-    "http": "0.0.1-security",
+    "http": "^0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "subscriptions-transport-ws": "^0.9.19"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.13"
   }
 }
