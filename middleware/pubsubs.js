@@ -116,7 +116,10 @@ const mockOptions = {
     subscriber: (mockRedisClient),
 };
 
-const pubsub = new RedisPubSub(mockOptions);
+const pubsub = new RedisPubSub({
+    publisher: new Redis(options),
+    subscriber: new Redis(options)
+});
 
 exports.pubsub = pubsub;
 exports.withFilter = withFilter;
