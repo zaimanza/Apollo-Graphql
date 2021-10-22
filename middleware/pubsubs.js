@@ -116,19 +116,7 @@ const mockOptions = {
     subscriber: (mockRedisClient),
 };
 
-let REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379';
-
-const optionss = {
-    retryStrategy: times => {
-        // reconnect after
-        return Math.min(times * 50, 2000);
-    }
-};
-
-const pubsub = new RedisPubSub({
-    publisher: new Redis(REDIS_URL, optionss),
-    subscriber: new Redis(REDIS_URL, optionss)
-});
+const pubsub = new RedisPubSub(mockOptions);
 
 exports.pubsub = pubsub;
 exports.withFilter = withFilter;
