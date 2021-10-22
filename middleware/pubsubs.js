@@ -2,24 +2,24 @@ var {
     PubSub,
     withFilter,
 } = require('graphql-subscriptions');
-var {
-    Kafka,
-} = require('kafkajs');
+// var {
+//     Kafka,
+// } = require('kafkajs');
 // var {
 //     KafkaPubSub,
 // } = require('graphql-kafkajs-subscriptions');
-var {
-    KafkaPubSub,
-} = require('graphql-kafka-subscriptions');
-var {
-    MQTTPubSub,
-} = require('graphql-mqtt-subscriptions');
+// var {
+//     KafkaPubSub,
+// } = require('graphql-kafka-subscriptions');
+// var {
+//     MQTTPubSub,
+// } = require('graphql-mqtt-subscriptions');
 var {
     RedisPubSub,
 } = require('graphql-redis-subscriptions');
-var {
-    GooglePubSub,
-} = require('@axelspringer/graphql-google-pubsub');
+// var {
+//     GooglePubSub,
+// } = require('@axelspringer/graphql-google-pubsub');
 var {
     Cluster
 } = require('ioredis');
